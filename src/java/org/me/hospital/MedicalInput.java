@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.me.suppliers;
+package org.me.hospital;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,8 +56,13 @@ public class MedicalInput {
         this.price = price;
     }
 
-    public boolean register() throws SQLException {
-        return s.execute("INSERT INTO `medicalinput`(`supplier`, `name`, `description`, `price`) VALUES (" + this.supplier + ",'" + this.name + "','" + this.description + "'," + this.price + ")");
+    public boolean register(){
+        try {
+            return s.execute("INSERT INTO `medicalinput`(`supplier`, `name`, `description`, `price`) VALUES (" + this.supplier + ",'" + this.name + "','" + this.description + "'," + this.price + ")");
+        } catch (SQLException ex) {
+            Logger.getLogger(MedicalInput.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
     private Statement s;
     private DB db;

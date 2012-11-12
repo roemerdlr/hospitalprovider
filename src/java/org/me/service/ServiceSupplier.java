@@ -4,12 +4,11 @@
  */
 package org.me.service;
 
-import java.sql.SQLException;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.me.suppliers.MedicalInput;
-import org.me.suppliers.Supplier;
+import org.me.hospital.MedicalInput;
+import org.me.hospital.Supplier;
 
 /**
  *
@@ -18,6 +17,9 @@ import org.me.suppliers.Supplier;
 @WebService(serviceName = "ServiceSupplier")
 public class ServiceSupplier {
 
+    /**
+     * This is a sample web service operation
+     */
     @WebMethod(operationName = "register")
     public boolean register(@WebParam(name = "name") String name) {
         Supplier s = new Supplier();
@@ -29,7 +31,10 @@ public class ServiceSupplier {
      * Web service operation
      */
     @WebMethod(operationName = "registerMedicaInput")
-    public boolean registerMedicaInput(@WebParam(name = "supplier") String supplier, @WebParam(name = "name") String name, @WebParam(name = "description") String description, @WebParam(name = "price") String price) throws SQLException {
+    public boolean registerMedicaInput(@WebParam(name = "supplier") String supplier,
+            @WebParam(name = "name") String name,
+            @WebParam(name = "description") String description,
+            @WebParam(name = "price") String price) {
         MedicalInput m = new MedicalInput();
         m.setSupplier(supplier);
         m.setDescription(description);

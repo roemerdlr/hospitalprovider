@@ -1,4 +1,4 @@
-package org.me.suppliers;
+package org.me.hospital;
 
 
 import java.sql.Connection;

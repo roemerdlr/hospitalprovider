@@ -1,4 +1,4 @@
-package org.me.suppliers;
+package org.me.hospital;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -27,9 +27,7 @@ public class Supplier {
 
     public boolean register() {
         try {
-            boolean rs = s.execute("INSERT INTO `supplier`(`name`) VALUES ('" + this.name + "')");
-            s.close();
-            return rs;
+            return s.execute("INSERT INTO `supplier`(`name`) VALUES ('" + this.name + "')");
         } catch (SQLException ex) {
             Logger.getLogger(Supplier.class.getName()).log(Level.SEVERE, null, ex);
         }

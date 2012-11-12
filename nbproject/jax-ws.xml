@@ -4,6 +4,9 @@
     <service name="ServiceSupplier">
       <implementation-class>org.me.service.ServiceSupplier</implementation-class>
     </service>
+    <service name="ServiceSolicitude">
+      <implementation-class>org.me.service.ServiceSolicitude</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
