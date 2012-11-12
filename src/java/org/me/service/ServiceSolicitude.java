@@ -5,7 +5,6 @@
 package org.me.service;
 
 import java.util.List;
-import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
