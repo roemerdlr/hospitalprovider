@@ -33,15 +33,12 @@ CREATE TABLE IF NOT EXISTS `medicalinput` (
   `description` text,
   `price` decimal(18,3) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `medicalinput`
 --
 
-INSERT INTO `medicalinput` (`id`, `supplier`, `name`, `description`, `price`) VALUES
-(1, 0, 'rrr', 'sssss', '125.000'),
-(2, 0, 'rrr', 'sssss', '125.000');
 
 -- --------------------------------------------------------
 
@@ -67,19 +64,5 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `supplier`
---
-
-INSERT INTO `supplier` (`id`, `name`) VALUES
-(1, 'carlos'),
-(2, 'carlos'),
-(3, 'carlos'),
-(4, 'carlos'),
-(5, 'pedro');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

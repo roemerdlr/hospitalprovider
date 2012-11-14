@@ -19,27 +19,13 @@ public class ServiceSupplier {
 
     /**
      * This is a sample web service operation
+     * @param name 
+     * @return 
      */
     @WebMethod(operationName = "register")
     public boolean register(@WebParam(name = "name") String name) {
         Supplier s = new Supplier();
         s.setName(name);
         return s.register();
-    }
-
-    /**
-     * Web service operation
-     */
-    @WebMethod(operationName = "registerMedicaInput")
-    public boolean registerMedicaInput(@WebParam(name = "supplier") String supplier,
-            @WebParam(name = "name") String name,
-            @WebParam(name = "description") String description,
-            @WebParam(name = "price") String price) {
-        MedicalInput m = new MedicalInput();
-        m.setSupplier(supplier);
-        m.setDescription(description);
-        m.setName(name);
-        m.setPrice(price);
-        return m.register();
-    }
+    }   
 }

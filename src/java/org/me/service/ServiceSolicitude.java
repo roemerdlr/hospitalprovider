@@ -22,6 +22,12 @@ public class ServiceSolicitude {
      */
     private Solicitude solicitude = new Solicitude();
 
+    /**
+     *
+     * @param medicalinput
+     * @param amount
+     * @return
+     */
     @WebMethod(operationName = "registerSolicitude")
     public boolean registerSolicitude(@WebParam(name = "medicalinput") int medicalinput, @WebParam(name = "amount") int amount) {
         solicitude.setMedicalInput(medicalinput);
@@ -29,11 +35,20 @@ public class ServiceSolicitude {
         return solicitude.register();
     }
 
+    /**
+     *
+     * @return
+     */
     @WebMethod(operationName = "getAllSolicitudesNotCancel")
     public List<String> getAllSolicitudesNotCancel() {
         return solicitude.getAllSolicitudesNotCancel();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @WebMethod(operationName = "getSolicitude")
     public List<String> getSolicitude(@WebParam(name = "id") int id) {
         return solicitude.getSolicitude(id);
