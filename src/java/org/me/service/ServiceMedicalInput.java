@@ -4,6 +4,7 @@
  */
 package org.me.service;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -21,11 +22,12 @@ public class ServiceMedicalInput {
      */
     /**
      * Web service operation
-     * @param supplier 
+     *
+     * @param supplier
      * @param price
-     * @param description 
+     * @param description
      * @param name
-     * @return  
+     * @return
      */
     @WebMethod(operationName = "registerMedicaInput")
     public boolean registerMedicaInput(@WebParam(name = "supplier") String supplier,
@@ -38,5 +40,15 @@ public class ServiceMedicalInput {
         m.setName(name);
         m.setPrice(price);
         return m.register();
+    }
+
+    @WebMethod(operationName = "getAllIdMedicalInput")
+    public List<String> getAllIdMedicalInput() {
+        return new MedicalInput().getAllIdMedicalInput();
+    }
+
+    @WebMethod(operationName = "getMedicalInput")
+    public List<String> getMedicalInput(@WebParam(name = "id") int id) {
+        return new MedicalInput().getMedicalInput(id);
     }
 }

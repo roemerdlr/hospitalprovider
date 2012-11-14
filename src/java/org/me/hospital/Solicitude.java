@@ -71,7 +71,7 @@ public class Solicitude {
         List<String> ls = new ArrayList<String>();
         try {
 
-            ResultSet executeQuery = this.s.executeQuery("SELECT `id`, `medicalinput`, `amount`, `cancel` FROM `solicitude` WHERE `id`=" + id);
+            ResultSet executeQuery = this.s.executeQuery("SELECT `id`, `medicalinput`, `amount`, `cancel` FROM `solicitude`  WHERE `cancel`=0");
             while (executeQuery.next()) {
                 ls.add(executeQuery.getObject(1).toString());
             }
@@ -86,7 +86,7 @@ public class Solicitude {
         List<String> ls = new ArrayList<String>();
         try {
 
-            ResultSet executeQuery = this.s.executeQuery("SELECT `id`, `medicalinput`, `amount`, `cancel` FROM `solicitude` WHERE `cancel`=0");
+            ResultSet executeQuery = this.s.executeQuery("SELECT `id`, `medicalinput`, `amount`, `cancel` FROM `solicitude` WHERE `id`=" + id);
             while (executeQuery.next()) {
                 ls.add(executeQuery.getObject(1).toString());
                 ls.add(executeQuery.getObject(2).toString());

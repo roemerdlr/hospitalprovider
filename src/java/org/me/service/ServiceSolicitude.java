@@ -30,9 +30,10 @@ public class ServiceSolicitude {
      */
     @WebMethod(operationName = "registerSolicitude")
     public boolean registerSolicitude(@WebParam(name = "medicalinput") int medicalinput, @WebParam(name = "amount") int amount) {
-        solicitude.setMedicalInput(medicalinput);
-        solicitude.setAmount(amount);
-        return solicitude.register();
+        Solicitude s = new Solicitude();
+        s.setMedicalInput(medicalinput);
+        s.setAmount(amount);
+        return s.register();
     }
 
     /**

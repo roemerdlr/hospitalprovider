@@ -7,7 +7,6 @@ package org.me.service;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.me.hospital.MedicalInput;
 import org.me.hospital.Supplier;
 
 /**

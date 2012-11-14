@@ -4,8 +4,11 @@
  */
 package org.me.hospital;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -56,7 +59,7 @@ public class MedicalInput {
         this.price = price;
     }
 
-    public boolean register(){
+    public boolean register() {
         try {
             return s.execute("INSERT INTO `medicalinput`(`supplier`, `name`, `description`, `price`) VALUES (" + this.supplier + ",'" + this.name + "','" + this.description + "'," + this.price + ")");
         } catch (SQLException ex) {
@@ -64,10 +67,42 @@ public class MedicalInput {
         }
         return false;
     }
+
+    public List<String> getAllIdMedicalInput() {
+        List<String> ls = new ArrayList<String>();
+        try {
+
+            ResultSet executeQuery = this.s.executeQuery("SELECT * FROM `medicalinput`");
+            while (executeQuery.next()) {
+                ls.add(executeQuery.getObject(1).toString());
+            }
+            return ls;
+        } catch (SQLException ex) {
+            Logger.getLogger(Solicitude.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ls;
+    }
     private Statement s;
     private DB db;
     private String name;
     private String description;
     private String supplier;
     private String price;
+
+    public List<String> getMedicalInput(int id) {
+      List<String> ls = new ArrayList<String>();
+        try {
+
+            ResultSet executeQuery = this.s.executeQuery("SELECT * FROM `medicalinput` WHERE `id`=" + id);
+            while (executeQuery.next()) {
+                ls.add(executeQuery.getObject(1).toString());
+                ls.add(executeQuery.getObject(2).toString());
+                ls.add(executeQuery.getObject(3).toString());
+            }
+            return ls;
+        } catch (SQLException ex) {
+            Logger.getLogger(Solicitude.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ls;
+    }
 }
